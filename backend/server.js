@@ -3,6 +3,9 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
+const transactionRoutes = require('./routes/transactionRoutes');
+
+
 // Load env vars
 dotenv.config();
 
@@ -18,6 +21,9 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes.js')); //<= You put this line of code after Middleware
+app.use('/api/transactions', transactionRoutes);
+
+
 
 // Test route
 app.get('/', (req, res) => {
