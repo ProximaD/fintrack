@@ -21,7 +21,8 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes.js')); //<= You put this line of code after Middleware
-app.use('/api/transactions', transactionRoutes);
+app.use('/api/transactions', require('./routes/transactions.js'));
+
 
 
 
